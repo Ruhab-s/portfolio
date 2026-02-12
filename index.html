@@ -91,6 +91,11 @@
                 <span class="block h-0.5 w-full bg-transparent group-hover:bg-yellow"></span>
               </li>
               <li class="group pl-6">
+                <span @click="triggerNavItem('#projects')" class="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white">Projects</span>
+                <span class="block h-0.5 w-full bg-transparent group-hover:bg-yellow"></span>
+              </li>
+
+              <li class="group pl-6">
                 <span @click="triggerNavItem('#education')" class="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white">Education</span>
                 <span class="block h-0.5 w-full bg-transparent group-hover:bg-yellow"></span>
               </li>
@@ -124,6 +129,9 @@
             </li>
             <li class="py-2">
               <span @click="triggerMobileNavItem('#skills')" class="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white">Skills</span>
+            </li>
+            <li class="py-2">
+              <span @click="triggerMobileNavItem('#projects')" class="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white">Projects</span>
             </li>
             <li class="py-2">
               <span @click="triggerMobileNavItem('#education')" class="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white">Education</span>
@@ -415,6 +423,55 @@
           </div>
         </div>
       </div>
+<!-- Projects Section -->
+<div class="bg-grey-50 py-16 md:py-20" id="projects">
+  <div class="container mx-auto px-4">
+    <h2 class="text-center font-header text-4xl font-semibold uppercase text-primary sm:text-5xl lg:text-6xl">
+      My Projects
+    </h2>
+    <h3 class="pt-6 text-center font-header text-xl font-medium text-black sm:text-2xl lg:text-3xl">
+      Data Analytics & Business Intelligence Projects
+    </h3>
+
+    <div class="grid grid-cols-1 gap-8 pt-12 lg:grid-cols-2">
+
+      <!-- Project 1 -->
+      <div class="bg-white rounded-lg shadow-lg p-8 hover:shadow-xl transition-shadow">
+        <h3 class="font-header text-2xl font-bold text-primary">
+          AMAZON SALES & OPERATIONS ANALYSIS
+        </h3>
+        <p class="text-sm text-grey-40 mt-2">
+          Data Analytics Project | Microsoft Excel
+        </p>
+
+        <ul class="mt-6 space-y-3 text-grey-20 list-disc list-inside">
+          <li>Analyzed category performance, regional profitability and return behavior.</li>
+          <li>Used IF & COUNTIF formulas to create delivery and return status.</li>
+          <li>Built Pivot Tables for Sales & Profit comparison.</li>
+          <li>Designed executive KPI dashboard with charts.</li>
+        </ul>
+      </div>
+
+      <!-- Project 2 -->
+      <div class="bg-white rounded-lg shadow-lg p-8 hover:shadow-xl transition-shadow">
+        <h3 class="font-header text-2xl font-bold text-primary">
+          BANK LOAN PERFORMANCE DASHBOARD
+        </h3>
+        <p class="text-sm text-grey-40 mt-2">
+          Data Analytics Project | Power BI
+        </p>
+
+        <ul class="mt-6 space-y-3 text-grey-20 list-disc list-inside">
+          <li>Analyzed loan distribution & default trends.</li>
+          <li>Built data model using calculated columns & DAX.</li>
+          <li>Created KPIs like Total Loan, Revenue & Default Rate.</li>
+          <li>Designed interactive dashboard with slicers.</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</div>
 
       <!-- Education Section -->
       <div class="container py-16 md:py-20 mx-auto px-4" id="education">
@@ -568,17 +625,7 @@
           </div>
         </div>
 
-        <form class="mx-auto w-full pt-10 sm:w-3/4">
-          <div class="flex flex-col md:flex-row gap-6">
-            <input class="w-full rounded border-2 border-grey-60 px-4 py-3 font-body text-black focus:border-primary focus:outline-none md:w-1/2" placeholder="Name" type="text" id="name" />
-            <input class="w-full rounded border-2 border-grey-60 px-4 py-3 font-body text-black focus:border-primary focus:outline-none md:w-1/2" placeholder="Email" type="email" id="email" />
-          </div>
-          <textarea class="mt-6 w-full rounded border-2 border-grey-60 px-4 py-3 font-body text-black focus:border-primary focus:outline-none md:mt-8" placeholder="Message" id="message" cols="30" rows="10"></textarea>
-          <button class="mt-6 flex items-center justify-center rounded bg-primary px-8 py-3 font-header text-lg font-bold uppercase text-white hover:bg-purple-700 transition-colors">
-            Send Message
-            <i class="bx bx-chevron-right relative -right-2 text-3xl"></i>
-          </button>
-        </form>
+        
       </div>
 
       <!-- Footer -->
