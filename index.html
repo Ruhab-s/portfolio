@@ -1,650 +1,229 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible" />
-  <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport" />
-  <title>Ruhab Shikalkar | Operations Executive & Data Management</title>
-  
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&family=Raleway:wght@400;500;600;700&display=swap" rel="stylesheet" />
-  
-  <!-- Boxicons -->
-  <link href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css" rel="stylesheet" />
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ruhab Shikalkar | Data Management, Automation, Identity Provisioning</title>
+<meta name="description" content="Ruhab Shikalkar. Consultant (Data and Deployment) on the Adobe Express rollout for K-12 and Higher Education across India. Entra ID, Zoho, PowerShell and process automation.">
+<meta name="theme-color" content="#000000">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&display=swap" rel="stylesheet">
+<style>
+  :root{--bg:#000;--panel:#141414;--line:#2a2a2a;--mute:#a8a8a8;--text:#e8e8e8;--hi:#fff;--f:'Archivo',system-ui,-apple-system,'Segoe UI',Arial,sans-serif}
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth;scroll-padding-top:70px;background:var(--bg)}
+  body{background:var(--bg);color:var(--text);font-family:var(--f);font-size:17px;line-height:1.65;-webkit-font-smoothing:antialiased}
+  a{color:inherit}
+  :focus-visible{outline:2px solid var(--hi);outline-offset:3px}
+  ::selection{background:var(--hi);color:#000}
+  .wrap{max-width:940px;margin:0 auto;padding:0 22px}
 
-  <!-- Tailwind CSS CDN -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  
-  <!-- Custom Tailwind Configuration -->
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            primary: '#5540af',
-            yellow: '#f7cd46',
-            'grey-50': '#f9fafb',
-            'grey-10': '#6b7280',
-            'grey-20': '#4b5563',
-            'grey-40': '#9ca3af',
-            'grey-60': '#d1d5db',
-            'grey-70': '#e5e7eb',
-            'grey-dark': '#374151',
-            lila: '#e9d5ff',
-            'hero-gradient-from': 'rgba(85, 64, 175, 0.8)',
-            'hero-gradient-to': 'rgba(247, 205, 70, 0.8)',
-            'blog-gradient-from': 'rgba(0, 0, 0, 0)',
-            'blog-gradient-to': 'rgba(0, 0, 0, 0.3)',
-          },
-          fontFamily: {
-            header: ['Raleway', 'sans-serif'],
-            body: ['Open Sans', 'sans-serif'],
-          },
-          zIndex: {
-            '70': '70',
-          },
-          spacing: {
-            '18': '4.5rem',
-            '84': '21rem',
-          },
-        },
-      },
-    }
-  </script>
-  
-  <!-- Alpine.js -->
-  <script defer src="https://unpkg.com/@alpine-collective/toolkit@1.0.0/dist/cdn.min.js"></script>
-  <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+  nav{position:sticky;top:0;z-index:50;background:rgba(0,0,0,.92);border-bottom:1px solid var(--line)}
+  nav .wrap{display:flex;gap:24px;align-items:center;height:54px;overflow-x:auto;white-space:nowrap;scrollbar-width:none}
+  nav .wrap::-webkit-scrollbar{display:none}
+  nav b{font-weight:800;color:var(--hi);margin-right:auto;font-size:16px}
+  nav a{text-decoration:none;color:var(--mute);font-size:15px}
+  nav a:hover,nav a.on{color:var(--hi)}
+  nav a{padding:10px 2px;border-bottom:2px solid transparent}
+  nav a.on{border-bottom-color:var(--hi)}
+
+  .hero{padding:68px 0 52px}
+  h1{font-weight:900;font-stretch:125%;font-size:clamp(44px,11vw,108px);line-height:.94;letter-spacing:-.03em;color:var(--hi)}
+  h1 span{display:block;color:#8c8c8c}
+  .role{margin-top:26px;font-size:21px;color:var(--hi);max-width:30em}
+  .role small{display:block;margin-top:8px;font-size:16px;color:var(--mute)}
+  .facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));margin-top:44px;border-top:1px solid var(--line)}
+  .facts div{padding:18px 16px 0 0}
+  .facts b{display:block;font-weight:800;font-stretch:112%;font-size:38px;color:var(--hi);line-height:1.1}
+  .facts span{font-size:15px;color:var(--mute)}
+
+  section{padding:56px 0;border-top:1px solid var(--line)}
+  h2{font-weight:800;font-stretch:112%;font-size:clamp(28px,5vw,42px);letter-spacing:-.02em;color:var(--hi);margin-bottom:28px}
+  h3{font-weight:700;font-size:21px;color:var(--hi);line-height:1.3}
+  .meta{color:var(--mute);font-size:15px}
+  ul{list-style:none;margin-top:10px}
+  li{padding-left:20px;position:relative;margin-top:7px}
+  li::before{content:'\2022';position:absolute;left:4px;color:var(--mute)}
+  .item{padding:24px 0;border-top:1px solid var(--line)}
+  .item:first-of-type{border-top:0;padding-top:0}
+
+  .skills p{margin-top:10px}
+  .skills b{color:var(--hi);font-weight:700}
+
+  .contact a{display:grid;grid-template-columns:110px 1fr auto;gap:16px;align-items:baseline;padding:18px 0;border-top:1px solid var(--line);text-decoration:none}
+  .contact a:last-child{border-bottom:1px solid var(--line)}
+  .contact .k{color:var(--mute);font-size:15px}
+  .contact .v{color:var(--hi);font-size:18px;word-break:break-all}
+  .contact .a{color:var(--mute);font-size:14px}
+  .contact a:hover .v{text-decoration:underline;text-underline-offset:5px}
+  footer{padding:28px 0 48px;color:var(--mute);font-size:14px;border-top:1px solid var(--line)}
+
+  @media (max-width:640px){
+    .contact a{grid-template-columns:1fr auto}
+    .contact .k{grid-column:1 / -1}
+  }
+  @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
 </head>
+<body id="top">
 
-<body :class="{ 'overflow-hidden max-h-screen': mobileMenu }" class="relative" x-data="{ mobileMenu: false }">
-  
-  <div id="main" class="relative">
-    <div x-data="{
-      triggerNavItem(id) {
-        $scroll(id)
-      },
-      triggerMobileNavItem(id) {
-        mobileMenu = false;
-        this.triggerNavItem(id)
-      }
-    }">
-    
-      <!-- Navigation -->
-      <div class="w-full z-50 top-0 py-3 sm:py-5 absolute">
-        <div class="container flex items-center justify-between mx-auto px-4">
-          <div>
-            
-          </div>
-          <div class="hidden lg:block">
-            <ul class="flex items-center">
-              <li class="group pl-6">
-                <span @click="triggerNavItem('#about')" class="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white">About</span>
-                <span class="block h-0.5 w-full bg-transparent group-hover:bg-yellow"></span>
-              </li>
-              <li class="group pl-6">
-                <span @click="triggerNavItem('#experience')" class="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white">Experience</span>
-                <span class="block h-0.5 w-full bg-transparent group-hover:bg-yellow"></span>
-              </li>
-              <li class="group pl-6">
-                <span @click="triggerNavItem('#skills')" class="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white">Skills</span>
-                <span class="block h-0.5 w-full bg-transparent group-hover:bg-yellow"></span>
-              </li>
-              <li class="group pl-6">
-                <span @click="triggerNavItem('#projects')" class="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white">Projects</span>
-                <span class="block h-0.5 w-full bg-transparent group-hover:bg-yellow"></span>
-              </li>
+<nav>
+  <div class="wrap">
+    <a href="#top" class="logo" style="margin-right:auto;border:0"><b style="margin:0">RS</b></a>
+    <a href="#experience">Experience</a>
+    <a href="#projects">Projects</a>
+    <a href="#skills">Skills</a>
+    <a href="#education">Education</a>
+    <a href="#contact">Contact</a>
+  </div>
+</nav>
 
-              <li class="group pl-6">
-                <span @click="triggerNavItem('#education')" class="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white">Education</span>
-                <span class="block h-0.5 w-full bg-transparent group-hover:bg-yellow"></span>
-              </li>
-              <li class="group pl-6">
-                <span @click="triggerNavItem('#contact')" class="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white">Contact</span>
-                <span class="block h-0.5 w-full bg-transparent group-hover:bg-yellow"></span>
-              </li>
-            </ul>
-          </div>
-          <div class="block lg:hidden">
-            <button @click="mobileMenu = true">
-              <i class="bx bx-menu text-4xl text-white"></i>
-            </button>
-          </div>
-        </div>
-      </div>
+<main>
+<div class="wrap">
 
-      <!-- Mobile Menu -->
-      <div class="pointer-events-none fixed inset-0 z-70 min-h-screen bg-black bg-opacity-70 opacity-0 transition-opacity lg:hidden" :class="{ 'opacity-100 pointer-events-auto': mobileMenu }">
-        <div class="absolute right-0 min-h-screen w-2/3 bg-primary py-4 px-8 shadow md:w-1/3">
-          <button class="absolute top-0 right-0 mt-4 mr-4" @click="mobileMenu = false">
-            <i class="bx bx-x text-4xl text-white"></i>
-          </button>
-
-          <ul class="mt-8 flex flex-col">
-            <li class="py-2">
-              <span @click="triggerMobileNavItem('#about')" class="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white">About</span>
-            </li>
-            <li class="py-2">
-              <span @click="triggerMobileNavItem('#experience')" class="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white">Experience</span>
-            </li>
-            <li class="py-2">
-              <span @click="triggerMobileNavItem('#skills')" class="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white">Skills</span>
-            </li>
-            <li class="py-2">
-              <span @click="triggerMobileNavItem('#projects')" class="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white">Projects</span>
-            </li>
-            <li class="py-2">
-              <span @click="triggerMobileNavItem('#education')" class="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white">Education</span>
-            </li>
-            <li class="py-2">
-              <span @click="triggerMobileNavItem('#contact')" class="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white">Contact</span>
-            </li>
-          </ul>
-        </div>
-      </div>
-
-      <!-- Hero Section -->
-      <div class="relative bg-gradient-to-r from-primary to-purple-600 py-8">
-        <div class="container relative z-30 pt-20 pb-12 sm:pt-56 sm:pb-48 lg:pt-64 lg:pb-48 mx-auto px-4">
-          <div class="flex flex-col items-center justify-center lg:flex-row">
-            <div class="rounded-full border-8 border-white shadow-xl">
-              <img src="https://ui-avatars.com/api/?name=Ruhab+Shikalkar&size=200&background=5540af&color=fff&bold=true" class="h-48 rounded-full sm:h-56" alt="author" />
-            </div>
-            <div class="pt-8 sm:pt-10 lg:pl-8 lg:pt-0">
-              <h1 class="text-center font-header text-4xl text-white sm:text-left sm:text-5xl md:text-6xl">
-                Hello I'm Ruhab Shikalkar!
-              </h1>
-              <p class="text-center font-header text-xl text-white sm:text-left sm:text-2xl pt-3">
-                Operations Executive & Data Management
-              </p>
-              <div class="flex flex-col justify-center pt-3 sm:flex-row sm:pt-5 lg:justify-start">
-                <div class="flex items-center justify-center pl-0 sm:justify-start md:pl-1">
-                  <p class="font-body text-lg uppercase text-white">Let's connect</p>
-                  <div class="hidden sm:block">
-                    <i class="bx bx-chevron-right text-3xl text-yellow"></i>
-                  </div>
-                </div>
-                <div class="flex items-center justify-center pt-5 pl-2 sm:justify-start sm:pt-0">
-                  <a href="https://github.com/Ruhab-s" target="_blank"><i class="bx bxl-github text-2xl text-white hover:text-yellow"></i></a>
-                  <a href="https://www.linkedin.com/in/ruhab-shikalkar-20b684276/" target="_blank" class="pl-4"><i class="bx bxl-linkedin text-2xl text-white hover:text-yellow"></i></a>
-                  <a href="mailto:work.ruhab@gmail.com" class="pl-4"><i class="bx bx-envelope text-2xl text-white hover:text-yellow"></i></a>
-                  <a href="tel:+919137541611" class="pl-4"><i class="bx bx-phone text-2xl text-white hover:text-yellow"></i></a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- About Section -->
-      <div class="bg-grey-50" id="about">
-        <div class="container flex flex-col items-center py-16 md:py-20 lg:flex-row mx-auto px-4">
-          <div class="w-full text-center sm:w-3/4 lg:w-3/5 lg:text-left">
-            <h2 class="font-header text-4xl font-semibold uppercase text-primary sm:text-5xl lg:text-6xl">
-              Who am I?
-            </h2>
-            <h4 class="pt-6 font-header text-xl font-medium text-black sm:text-2xl lg:text-3xl">
-              I'm Ruhab Shikalkar, Operations Executive & Data Management Associate
-            </h4>
-            <p class="pt-6 font-body leading-relaxed text-grey-20">
-              I am a dedicated professional with expertise in operations management and data-driven decision making. With a background in Information Technology and hands-on experience in business operations, I specialize in building & managing customer relationships, and implementing efficient operational workflows.
-            </p>
-            <p class="pt-4 font-body leading-relaxed text-grey-20">
-              My experience spans from founding and scaling a digital gaming rental venture to conducting network security analysis. I'm passionate about leveraging technology to solve real-world business challenges and creating structured processes that drive organizational efficiency.
-            </p>
-            <div class="flex flex-col justify-center pt-6 sm:flex-row lg:justify-start">
-              <div class="flex items-center justify-center sm:justify-start">
-                <p class="font-body text-lg font-semibold uppercase text-grey-20">
-                  Connect with me
-                </p>
-                <div class="hidden sm:block">
-                  <i class="bx bx-chevron-right text-2xl text-primary"></i>
-                </div>
-              </div>
-              <div class="flex items-center justify-center pt-5 pl-2 sm:justify-start sm:pt-0">
-                <a href="https://github.com/Ruhab-s" target="_blank"><i class="bx bxl-github text-2xl text-primary hover:text-yellow"></i></a>
-                <a href="https://www.linkedin.com/in/ruhab-shikalkar-20b684276/" target="_blank" class="pl-4"><i class="bx bxl-linkedin text-2xl text-primary hover:text-yellow"></i></a>
-                <a href="mailto:work.ruhab@gmail.com" class="pl-4"><i class="bx bx-envelope text-2xl text-primary hover:text-yellow"></i></a>
-              </div>
-            </div>
-          </div>
-          <div class="w-full pl-0 pt-10 sm:w-3/4 lg:w-2/5 lg:pl-12 lg:pt-0">
-            <div>
-              <div class="flex items-end justify-between">
-                <h4 class="font-body font-semibold uppercase text-black">Data Management</h4>
-                <h3 class="font-body text-3xl font-bold text-primary">85%</h3>
-              </div>
-              <div class="mt-2 h-3 w-full rounded-full bg-lila">
-                <div class="h-3 rounded-full bg-primary transition-all duration-500" style="width: 90%"></div>
-              </div>
-            </div>
-            <div class="pt-6">
-              <div class="flex items-end justify-between">
-                <h4 class="font-body font-semibold uppercase text-black">Network Security</h4>
-                <h3 class="font-body text-3xl font-bold text-primary">60%</h3>
-              </div>
-              <div class="mt-2 h-3 w-full rounded-full bg-lila">
-                <div class="h-3 rounded-full bg-primary transition-all duration-500" style="width: 85%"></div>
-              </div>
-            </div>
-            <div class="pt-6">
-              <div class="flex items-end justify-between">
-                <h4 class="font-body font-semibold uppercase text-black">Operations Management</h4>
-                <h3 class="font-body text-3xl font-bold text-primary">95%</h3>
-              </div>
-              <div class="mt-2 h-3 w-full rounded-full bg-lila">
-                <div class="h-3 rounded-full bg-primary transition-all duration-500" style="width: 95%"></div>
-              </div>
-            </div>
-            <div class="pt-6">
-              <div class="flex items-end justify-between">
-                <h4 class="font-body font-semibold uppercase text-black">Microsoft Office</h4>
-                <h3 class="font-body text-3xl font-bold text-primary">85%</h3>
-              </div>
-              <div class="mt-2 h-3 w-full rounded-full bg-lila">
-                <div class="h-3 rounded-full bg-primary transition-all duration-500" style="width: 88%"></div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Experience Section -->
-      <div class="container py-16 md:py-20 mx-auto px-4" id="experience">
-        <h2 class="text-center font-header text-4xl font-semibold uppercase text-primary sm:text-5xl lg:text-6xl">
-          My Experience
-        </h2>
-        <h3 class="pt-6 text-center font-header text-xl font-medium text-black sm:text-2xl lg:text-3xl">
-          Here's what I've accomplished
-        </h3>
-
-        <div class="relative mx-auto mt-12 max-w-5xl">
-          <!-- Timeline Line -->
-          <div class="absolute left-1/2 h-full w-1 bg-grey-70 transform -translate-x-1/2 hidden md:block"></div>
-
-          <!-- Experience 1 -->
-          <div class="mb-8 flex justify-between items-center w-full">
-            <div class="order-1 w-5/12 hidden md:block"></div>
-            <div class="z-20 flex items-center order-1 bg-primary shadow-xl w-8 h-8 rounded-full hidden md:flex">
-              <h1 class="mx-auto font-semibold text-lg text-white">1</h1>
-            </div>
-            <div class="order-1 bg-white rounded-lg shadow-xl w-full md:w-5/12 px-6 py-4">
-              <div class="mb-3 flex justify-between items-center">
-                <h3 class="font-header font-bold text-primary text-xl">Founder & Operations Executive</h3>
-              </div>
-              <p class="text-sm font-medium leading-snug tracking-wide text-grey-20">Helium Gaming (Self-Founded Venture)</p>
-              <p class="text-sm font-medium text-grey-40">Oct 2022 - Present</p>
-              <ul class="mt-3 text-sm leading-relaxed text-grey-20 list-disc list-inside space-y-1">
-                <li>Founded and scaled a digital gaming rental venture with 2000+ users</li>
-                <li>Generated ₹10L+ in annual revenue serving customer acquisition and repeat purchases</li>
-                <li>Implemented invoicing, and payment tracking systems</li>
-                <li>Created structured customer account records using Google Notes and Sheets</li>
-                <li>Handled inventory management with real-time rental status updates</li>
-              </ul>
-            </div>
-          </div>
-
-          <!-- Experience 2 -->
-          <div class="mb-8 flex justify-between flex-row-reverse items-center w-full">
-            <div class="order-1 w-5/12 hidden md:block"></div>
-            <div class="z-20 flex items-center order-1 bg-primary shadow-xl w-8 h-8 rounded-full hidden md:flex">
-              <h1 class="mx-auto font-semibold text-lg text-white">2</h1>
-            </div>
-            <div class="order-1 bg-white rounded-lg shadow-xl w-full md:w-5/12 px-6 py-4">
-              <div class="mb-3 flex justify-between items-center">
-                <h3 class="font-header font-bold text-primary text-xl">Network Security Intern</h3>
-              </div>
-              <p class="text-sm font-medium leading-snug tracking-wide text-grey-20">Control Case Pvt Ltd</p>
-              <p class="text-sm font-medium text-grey-40">Dec 2024 - April 2025</p>
-              <ul class="mt-3 text-sm leading-relaxed text-grey-20 list-disc list-inside space-y-1">
-                <li>Performed packet capture and deep traffic analysis using Wireshark</li>
-                <li>Monitored TCP/IP, HTTP/HTTPS, DNS, UDP, and ARP protocols</li>
-                <li>Detected security threats including port scanning and brute-force patterns</li>
-                <li>Conducted protocol hierarchy, endpoint, and TCP stream analysis</li>
-                <li>Developed traffic baseline models and detection methodologies</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Skills Section -->
-      <div class="bg-grey-50 py-16 md:py-20" id="skills">
-        <div class="container mx-auto px-4">
-          <h2 class="text-center font-header text-4xl font-semibold uppercase text-primary sm:text-5xl lg:text-6xl">
-            My Skills
-          </h2>
-          <h3 class="pt-6 text-center font-header text-xl font-medium text-black sm:text-2xl lg:text-3xl">
-            Technical & Core Competencies
-          </h3>
-
-          <div class="grid grid-cols-1 gap-6 pt-10 sm:grid-cols-2 md:gap-10 md:pt-12 lg:grid-cols-2">
-            <!-- Technical Skills -->
-            <div class="group rounded px-8 py-8 bg-white shadow-lg">
-              <h3 class="text-center font-header text-2xl font-semibold uppercase text-primary mb-6">
-                Technical Skills
-              </h3>
-              <div class="space-y-4">
-                <div class="flex items-start">
-                  <i class="bx bx-check text-2xl text-primary mr-2 mt-1"></i>
-                  <div>
-                    <h4 class="font-semibold text-grey-dark">Microsoft Office Suite</h4>
-                    <p class="text-sm text-grey-20">MS Excel, MS Word, PowerPoint</p>
-                  </div>
-                </div>
-                <div class="flex items-start">
-                  <i class="bx bx-check text-2xl text-primary mr-2 mt-1"></i>
-                  <div>
-                    <h4 class="font-semibold text-grey-dark">Data Management</h4>
-                    <p class="text-sm text-grey-20">Database handling, ID tracking, structured documentation</p>
-                  </div>
-                </div>
-                <div class="flex items-start">
-                  <i class="bx bx-check text-2xl text-primary mr-2 mt-1"></i>
-                  <div>
-                    <h4 class="font-semibold text-grey-dark">Inventory & Operations Tracking</h4>
-                    <p class="text-sm text-grey-20">Real-time status monitoring, workflow coordination</p>
-                  </div>
-                </div>
-                <div class="flex items-start">
-                  <i class="bx bx-check text-2xl text-primary mr-2 mt-1"></i>
-                  <div>
-                    <h4 class="font-semibold text-grey-dark">Financial Systems</h4>
-                    <p class="text-sm text-grey-20">Billing, invoicing, payment tracking automation</p>
-                  </div>
-                </div>
-                <div class="flex items-start">
-                  <i class="bx bx-check text-2xl text-primary mr-2 mt-1"></i>
-                  <div>
-                    <h4 class="font-semibold text-grey-dark">Network Security Analysis</h4>
-                    <p class="text-sm text-grey-20">Port scanning, ARP spoofing, anomaly detection</p>
-                  </div>
-                </div>
-                <div class="flex items-start">
-                  <i class="bx bx-check text-2xl text-primary mr-2 mt-1"></i>
-                  <div>
-                    <h4 class="font-semibold text-grey-dark">Graphic Design</h4>
-                    <p class="text-sm text-grey-20">Canva, Corel Draw, Adobe Photoshop</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Core Competencies -->
-            <div class="group rounded px-8 py-8 bg-white shadow-lg">
-              <h3 class="text-center font-header text-2xl font-semibold uppercase text-primary mb-6">
-                Core Competencies
-              </h3>
-              <div class="space-y-4">
-                <div class="flex items-start">
-                  <i class="bx bx-badge-check text-2xl text-yellow mr-2 mt-1"></i>
-                  <div>
-                    <h4 class="font-semibold text-grey-dark">Leadership</h4>
-                    <p class="text-sm text-grey-20">Team coordination and project management</p>
-                  </div>
-                </div>
-                <div class="flex items-start">
-                  <i class="bx bx-badge-check text-2xl text-yellow mr-2 mt-1"></i>
-                  <div>
-                    <h4 class="font-semibold text-grey-dark">Communication</h4>
-                    <p class="text-sm text-grey-20">Clear stakeholder engagement and reporting</p>
-                  </div>
-                </div>
-                <div class="flex items-start">
-                  <i class="bx bx-badge-check text-2xl text-yellow mr-2 mt-1"></i>
-                  <div>
-                    <h4 class="font-semibold text-grey-dark">Problem-Solving</h4>
-                    <p class="text-sm text-grey-20">Analytical approach to operational challenges</p>
-                  </div>
-                </div>
-                <div class="flex items-start">
-                  <i class="bx bx-badge-check text-2xl text-yellow mr-2 mt-1"></i>
-                  <div>
-                    <h4 class="font-semibold text-grey-dark">Analytical Thinking</h4>
-                    <p class="text-sm text-grey-20">Data-driven decision making</p>
-                  </div>
-                </div>
-                <div class="flex items-start">
-                  <i class="bx bx-badge-check text-2xl text-yellow mr-2 mt-1"></i>
-                  <div>
-                    <h4 class="font-semibold text-grey-dark">Time Management</h4>
-                    <p class="text-sm text-grey-20">Efficient prioritization and execution</p>
-                  </div>
-                </div>
-                <div class="flex items-start">
-                  <i class="bx bx-badge-check text-2xl text-yellow mr-2 mt-1"></i>
-                  <div>
-                    <h4 class="font-semibold text-grey-dark">Process Optimization</h4>
-                    <p class="text-sm text-grey-20">Continuous improvement mindset</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-<!-- Projects Section -->
-<div class="bg-grey-50 py-16 md:py-20" id="projects">
-  <div class="container mx-auto px-4">
-    <h2 class="text-center font-header text-4xl font-semibold uppercase text-primary sm:text-5xl lg:text-6xl">
-      My Projects
-    </h2>
-    <h3 class="pt-6 text-center font-header text-xl font-medium text-black sm:text-2xl lg:text-3xl">
-      Data Analytics & Business Intelligence Projects
-    </h3>
-
-    <div class="grid grid-cols-1 gap-8 pt-12 lg:grid-cols-2">
-
-      <!-- Project 1 -->
-      <div class="bg-white rounded-lg shadow-lg p-8 hover:shadow-xl transition-shadow">
-        <h3 class="font-header text-2xl font-bold text-primary">
-          AMAZON SALES & OPERATIONS ANALYSIS
-        </h3>
-        <p class="text-sm text-grey-40 mt-2">
-          Data Analytics Project | Microsoft Excel
-        </p>
-
-        <ul class="mt-6 space-y-3 text-grey-20 list-disc list-inside">
-          <li>Analyzed category performance, regional profitability and return behavior.</li>
-          <li>Used IF & COUNTIF formulas to create delivery and return status.</li>
-          <li>Built Pivot Tables for Sales & Profit comparison.</li>
-          <li>Designed executive KPI dashboard with charts.</li>
-        </ul>
-      </div>
-
-      <!-- Project 2 -->
-      <div class="bg-white rounded-lg shadow-lg p-8 hover:shadow-xl transition-shadow">
-        <h3 class="font-header text-2xl font-bold text-primary">
-          BANK LOAN PERFORMANCE DASHBOARD
-        </h3>
-        <p class="text-sm text-grey-40 mt-2">
-          Data Analytics Project | Power BI
-        </p>
-
-        <ul class="mt-6 space-y-3 text-grey-20 list-disc list-inside">
-          <li>Analyzed loan distribution & default trends.</li>
-          <li>Built data model using calculated columns & DAX.</li>
-          <li>Created KPIs like Total Loan, Revenue & Default Rate.</li>
-          <li>Designed interactive dashboard with slicers.</li>
-        </ul>
-      </div>
-
+  <div class="hero">
+    <h1>Ruhab <span>Shikalkar</span></h1>
+    <p class="role">
+      Data management, process automation and identity provisioning.
+      <small>Consultant (Data and Deployment), Kloud Datasoft. On-site with the Adobe Education Program team.</small>
+    </p>
+    <div class="facts">
+      <div><b>18,381</b><span>schools in the Adobe Express rollout</span></div>
+      <div><b>7.37M+</b><span>students covered</span></div>
+      <div><b>52</b><span>state-level deployments</span></div>
+      <div><b>9+</b><span>automation tools built</span></div>
     </div>
   </div>
+
+  <section id="experience">
+    <h2>Experience</h2>
+
+    <div class="item">
+      <h3>Consultant (Data and Deployment)</h3>
+      <div class="meta">Kloud Datasoft Pvt Ltd | Mar 2026 to present</div>
+      <ul>
+        <li>Deployment specialist on the Adobe Express rollout for K-12 and Higher Education across 18,381 schools and 7.37M+ students.</li>
+        <li>Bulk creation and management of student and teacher IDs and licenses in Microsoft Entra ID and Zoho.</li>
+        <li>Onboarded state programmes including Bihar (6.7 lakh+ students), Uttar Pradesh, Delhi, Assam, Goa and Uttarakhand.</li>
+        <li>Built 9+ PowerShell and HTML tools that replaced manual spreadsheet work on lakh-row datasets.</li>
+      </ul>
+    </div>
+
+    <div class="item">
+      <h3>Founder, Helium Gaming</h3>
+      <div class="meta">Self-founded venture | Oct 2022 to Jan 2026</div>
+      <ul>
+        <li>Scaled a digital gaming rental business to 2,000+ customers and about ₹10 to 11 lakh annual revenue.</li>
+        <li>Ran customer records, payments and inventory tracking in Excel.</li>
+      </ul>
+    </div>
+
+    <div class="item">
+      <h3>Network Security Intern</h3>
+      <div class="meta">Control Case Pvt Ltd | Dec 2024 to Apr 2025</div>
+      <ul>
+        <li>Wireshark packet capture and traffic analysis, plus incident response templates.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="projects">
+    <h2>Projects</h2>
+
+    <div class="item">
+      <h3>Adobe Engagement Tracker, Tamil Nadu (TNSDC)</h3>
+      <div class="meta">HTML, JavaScript</div>
+      <ul>
+        <li>Browser tool that matches a 1 lakh+ row learner sheet against Adobe Content Logs and builds the Excel engagement report.</li>
+        <li>Cut the reporting task from 3 hours to 5 minutes. Reusable by Adobe partners.</li>
+      </ul>
+    </div>
+
+    <div class="item">
+      <h3>Entra group reconciliation script</h3>
+      <div class="meta">PowerShell, Microsoft Entra ID</div>
+      <ul>
+        <li>Compares a CSV against an Entra group and adds only missing users, with per-job logs and a summary report.</li>
+      </ul>
+    </div>
+
+    <div class="item">
+      <h3>Deployment tracker remarks workflow</h3>
+      <div class="meta">Power Apps, Power Automate</div>
+      <ul>
+        <li>Lets view-only specialists add remarks to the master tracker without edit access.</li>
+      </ul>
+    </div>
+
+    <div class="item">
+      <h3>Data analytics projects</h3>
+      <div class="meta">Power BI, Excel</div>
+      <ul>
+        <li>Bank loan performance dashboard (Power BI) and Amazon sales analysis (Excel pivots and KPI dashboard).</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="skills">
+    <h2>Skills</h2>
+    <div class="skills">
+      <p><b>Identity and automation:</b> Microsoft Entra ID, PowerShell, Zoho, Power Automate, Power Apps</p>
+      <p><b>Data:</b> Excel, Power BI (basics), data validation, reconciliation, MIS reporting</p>
+      <p><b>AI tools:</b> Claude, ChatGPT, Gemini</p>
+      <p><b>Languages:</b> English, Hindi</p>
+    </div>
+  </section>
+
+  <section id="education">
+    <h2>Education</h2>
+    <div class="item">
+      <h3>B.Tech, Information Technology (AI specialisation)</h3>
+      <div class="meta">Pillai College of Engineering, New Panvel | 2022 to 2025 | CGPA 8.54</div>
+    </div>
+    <div class="item">
+      <h3>Diploma, Mechanical Engineering</h3>
+      <div class="meta">M.H. Saboo Siddik Polytechnic, Byculla | 2019 to 2022 | CGPA 9.35</div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>Contact</h2>
+    <div class="contact">
+      <a href="mailto:work.ruhab@gmail.com"><span class="k">Email</span><span class="v">work.ruhab@gmail.com</span><span class="a">write</span></a>
+      <a href="tel:+919137541611"><span class="k">Phone</span><span class="v">+91-9137541611</span><span class="a">call</span></a>
+      <a href="https://www.linkedin.com/in/ruhab-shikalkar-20b684276/" target="_blank" rel="noopener"><span class="k">LinkedIn</span><span class="v">Ruhab Shikalkar</span><span class="a">open</span></a>
+      <a href="https://github.com/Ruhab-s" target="_blank" rel="noopener"><span class="k">GitHub</span><span class="v">Ruhab-s</span><span class="a">open</span></a>
+    </div>
+  </section>
+
 </div>
+</main>
 
-      <!-- Education Section -->
-      <div class="container py-16 md:py-20 mx-auto px-4" id="education">
-        <h2 class="text-center font-header text-4xl font-semibold uppercase text-primary sm:text-5xl lg:text-6xl">
-          Education
-        </h2>
-        <h3 class="pt-6 text-center font-header text-xl font-medium text-black sm:text-2xl lg:text-3xl">
-          My Academic Background
-        </h3>
+<footer>
+  <div class="wrap">&copy; 2026 Ruhab Shikalkar</div>
+</footer>
 
-        <div class="mx-auto grid w-full grid-cols-1 gap-8 pt-12 sm:w-3/4 md:gap-10 lg:w-full lg:grid-cols-2">
-          <!-- Education 1 -->
-          <div class="bg-white rounded-lg shadow-lg p-8 hover:shadow-xl transition-shadow">
-            <div class="flex items-start">
-              <div class="flex-shrink-0">
-                <i class="bx bxs-graduation text-5xl text-primary"></i>
-              </div>
-              <div class="ml-6">
-                <h3 class="font-header text-xl font-bold text-primary">Bachelor of Technology</h3>
-                <h4 class="pt-2 font-body text-lg font-semibold text-grey-dark">Information Technology with Specialization in AI & Robotics</h4>
-                <p class="pt-2 text-sm text-grey-20">Pillai College of Engineering, New Panvel</p>
-                <div class="pt-2 flex justify-between items-center">
-                  <p class="text-sm font-medium text-grey-40">11/2022 - 05/2025</p>
-                  <p class="text-sm font-bold text-primary">CGPA: 8.54</p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Education 2 -->
-          <div class="bg-white rounded-lg shadow-lg p-8 hover:shadow-xl transition-shadow">
-            <div class="flex items-start">
-              <div class="flex-shrink-0">
-                <i class="bx bxs-book text-5xl text-primary"></i>
-              </div>
-              <div class="ml-6">
-                <h3 class="font-header text-xl font-bold text-primary">Diploma</h3>
-                <h4 class="pt-2 font-body text-lg font-semibold text-grey-dark">Mechanical Engineering</h4>
-                <p class="pt-2 text-sm text-grey-20">M.H.Saboo Siddik Polytechnic, Byculla</p>
-                <div class="pt-2 flex justify-between items-center">
-                  <p class="text-sm font-medium text-grey-40">06/2019 - 05/2022</p>
-                  <p class="text-sm font-bold text-primary">CGPA: 9.35</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Statistics Section -->
-      <div class="bg-gradient-to-br from-primary to-purple-700 py-16 md:py-20" id="statistics">
-        <div class="container mx-auto px-4">
-          <div class="mx-auto w-full bg-white py-16 shadow-xl rounded-lg md:w-11/12 lg:py-20 xl:py-24">
-            <div class="grid grid-cols-2 gap-5 md:gap-8 xl:grid-cols-4 xl:gap-5">
-              <div class="flex flex-col items-center justify-center text-center md:flex-row md:text-left">
-                <div>
-                  <i class="bx bx-user-check text-primary text-6xl md:text-7xl"></i>
-                </div>
-                <div class="pt-5 md:pl-5 md:pt-0">
-                  <h1 class="font-body text-2xl font-bold text-primary md:text-4xl">2000+</h1>
-                  <h4 class="text-grey-dark font-header text-base font-medium leading-loose md:text-xl">
-                    Users Served
-                  </h4>
-                </div>
-              </div>
-
-              <div class="flex flex-col items-center justify-center text-center md:flex-row md:text-left">
-                <div>
-                  <i class="bx bx-rupee text-primary text-6xl md:text-7xl"></i>
-                </div>
-                <div class="pt-5 md:pl-5 md:pt-0">
-                  <h1 class="font-body text-2xl font-bold text-primary md:text-4xl">₹10L+</h1>
-                  <h4 class="text-grey-dark font-header text-base font-medium leading-loose md:text-xl">
-                    Annual Revenue
-                  </h4>
-                </div>
-              </div>
-
-              <div class="mt-6 flex flex-col items-center justify-center text-center md:mt-10 md:flex-row md:text-left lg:mt-0">
-                <div>
-                  <i class="bx bx-trending-up text-primary text-6xl md:text-7xl"></i>
-                </div>
-                <div class="pt-5 md:pl-5 md:pt-0">
-                  <h1 class="font-body text-2xl font-bold text-primary md:text-4xl">85%</h1>
-                  <h4 class="text-grey-dark font-header text-base font-medium leading-loose md:text-xl">
-                    Process Efficiency
-                  </h4>
-                </div>
-              </div>
-
-              <div class="mt-6 flex flex-col items-center justify-center text-center md:mt-10 md:flex-row md:text-left lg:mt-0">
-                <div>
-                  <i class="bx bx-shield-quarter text-primary text-6xl md:text-7xl"></i>
-                </div>
-                <div class="pt-5 md:pl-5 md:pt-0">
-                  <h1 class="font-body text-2xl font-bold text-primary md:text-4xl">50+</h1>
-                  <h4 class="text-grey-dark font-header text-base font-medium leading-loose md:text-xl">
-                    Security Threats Detected
-                  </h4>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Contact Section -->
-      <div class="container py-16 md:py-20 mx-auto px-4" id="contact">
-        <h2 class="text-center font-header text-4xl font-semibold uppercase text-primary sm:text-5xl lg:text-6xl">
-          Get In Touch
-        </h2>
-        <h4 class="pt-6 text-center font-header text-xl font-medium text-black sm:text-2xl lg:text-3xl">
-          Have Any Questions?
-        </h4>
-        <div class="mx-auto w-full pt-5 text-center sm:w-2/3 lg:pt-6">
-          <p class="font-body text-grey-10">
-            Feel free to reach out if you have any questions or would like to discuss opportunities in operations management, data analysis, or network security.
-            I'm always open to new challenges and collaborations.
-          </p>
-        </div>
-
-        <!-- Contact Info -->
-        <div class="mx-auto w-full pt-10 sm:w-3/4 flex flex-wrap justify-center gap-8">
-          <div class="flex items-center">
-            <i class="bx bx-phone text-3xl text-primary mr-3"></i>
-            <div>
-              <p class="font-body text-sm text-grey-40">Phone</p>
-              <p class="font-body text-lg text-grey-dark">+91-9137541611</p>
-            </div>
-          </div>
-          <div class="flex items-center">
-            <i class="bx bx-envelope text-3xl text-primary mr-3"></i>
-            <div>
-              <p class="font-body text-sm text-grey-40">Email</p>
-              <p class="font-body text-lg text-grey-dark">work.ruhab@gmail.com</p>
-            </div>
-          </div>
-          <div class="flex items-center">
-            <i class="bx bxl-github text-3xl text-primary mr-3"></i>
-            <div>
-              <p class="font-body text-sm text-grey-40">GitHub</p>
-              <p class="font-body text-lg text-grey-dark">Ruhab-s</p>
-            </div>
-          </div>
-          <div class="flex items-center">
-            <i class="bx bxl-linkedin text-3xl text-primary mr-3"></i>
-            <div>
-              <p class="font-body text-sm text-grey-40">LinkedIn</p>
-              <p class="font-body text-lg text-grey-dark">Ruhab Shikalkar</p>
-            </div>
-          </div>
-        </div>
-
-        
-      </div>
-
-      <!-- Footer -->
-      <div class="bg-primary">
-        <div class="container flex flex-col justify-between py-6 sm:flex-row mx-auto px-4">
-          <p class="text-center font-body text-white md:text-left">
-            © Copyright 2026. All rights reserved, Ruhab Shikalkar.
-          </p>
-          <div class="flex items-center justify-center pt-5 sm:justify-start sm:pt-0">
-            <a href="https://github.com/Ruhab-s" target="_blank"><i class="bx bxl-github text-2xl text-white hover:text-yellow transition-colors"></i></a>
-            <a href="https://www.linkedin.com/in/ruhab-shikalkar-20b684276/" target="_blank" class="pl-4"><i class="bx bxl-linkedin text-2xl text-white hover:text-yellow transition-colors"></i></a>
-            <a href="mailto:work.ruhab@gmail.com" class="pl-4"><i class="bx bx-envelope text-2xl text-white hover:text-yellow transition-colors"></i></a>
-            <a href="tel:+91-9137541611" class="pl-4"><i class="bx bx-phone text-2xl text-white hover:text-yellow transition-colors"></i></a>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </div>
-
+<script>
+(function(){
+  var links=[].slice.call(document.querySelectorAll('nav a[href^="#"]:not(.logo)'));
+  var secs=links.map(function(a){return document.querySelector(a.getAttribute('href'));});
+  var bar=document.querySelector('nav .wrap');
+  function spy(){
+    var y=window.scrollY+90, cur=-1;
+    for(var i=0;i<secs.length;i++){ if(secs[i] && secs[i].offsetTop<=y) cur=i; }
+    if(window.innerHeight+window.scrollY>=document.body.scrollHeight-4) cur=secs.length-1;
+    links.forEach(function(a,i){
+      var on=i===cur;
+      a.classList.toggle('on',on);
+      if(on){ a.setAttribute('aria-current','true'); } else { a.removeAttribute('aria-current'); }
+    });
+    if(cur>=0){ var a=links[cur]; bar.scrollLeft=a.offsetLeft-bar.clientWidth/2+a.clientWidth/2; }
+  }
+  window.addEventListener('scroll',spy,{passive:true});
+  window.addEventListener('resize',spy);
+  spy();
+})();
+</script>
 </body>
 </html>
